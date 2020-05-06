@@ -19,16 +19,16 @@ public class MemberDao {
 		members = new ArrayList<Member>();
 		for(int i = 0; i<20; i++) {
 			String strI = String.valueOf(i);
-			Member member = new Member(
-					i, 
-					"mem_id"+strI, 
-					"mem_email"+strI,
-					"mem_pw" + strI,
-					"mem_nick" + strI,
-					"mem_phone" + strI,
-					"mem_birth" + strI,
-					true
-					);
+			Member member = Member.builder()
+					.mem_pk(i)
+					.mem_id("mem_id"+strI)
+					.mem_email("mem_email"+strI)
+					.mem_pw("mem_pw" + strI)
+					.mem_nick("mem_nick" + strI)
+					.mem_phone("mem_phone" + strI)
+					.mem_birth("mem_birth" + strI)
+					.mem_gender(true)
+					.build();
 			members.add(member);
 		}
 	}

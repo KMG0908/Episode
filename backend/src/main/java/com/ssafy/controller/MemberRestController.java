@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ssafy.model.dto.Auth;
 import com.ssafy.model.dto.Member;
+import com.ssafy.model.repository.MemberRepository;
 import com.ssafy.model.service.MemberService;
 
 import io.swagger.annotations.Api;
@@ -35,15 +36,14 @@ public class MemberRestController {
 
 	@PostMapping("/login")
 	ResponseEntity<Map<String, Object>> doLogin(@RequestBody Auth auth){
-		
 		Member member = mService.login(auth);
-
 		return handleSuccess(member);
 	}
 	@PostMapping("/regist")
 	ResponseEntity<Map<String, Object>> doRegist(@RequestBody Member member){
-		Boolean result = mService.regist(member);
-		return handleSuccess(result);
+		System.out.println("controller member : " + member);
+		mService.regist(member);
+		return handleSuccess("회원가입 성공");
 	}
 	public ResponseEntity<Map<String, Object>> handleSuccess(Object data) {
 		Map<String, Object> resultMap = new HashMap<String, Object>();

@@ -79,6 +79,10 @@ public class NovelRestController {
 	@ApiOperation("소설의 장르 업데이트 | 체크된 모든 장르의 PK 값을 배열이나 리스트로 보내면 됨")
 	@PutMapping("/genre/{novelPk}") // url 바꿔야함
 	ResponseEntity<Map<String, Object>> updateGenreOfNovel(@PathVariable int novelPk, @RequestBody List<Integer> genrePks) {
+		System.out.println("updateGenreOfNovel");
+		for(Integer i : genrePks) {
+			System.out.println(i);
+		}
 		nService.updateGenreOfNovel(novelPk, genrePks);
 		return handleSuccess("소설의 장르 업데이트 성공");
 	}

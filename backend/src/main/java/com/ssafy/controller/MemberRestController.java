@@ -107,9 +107,13 @@ public class MemberRestController {
 		else return handleFail(fail[key - 1], HttpStatus.OK);
 	}
 	
-	@ApiOperation("좋아요 메소드 | ObjectType >> 2 : 소설, 3 : 에피소드, 6 : 댓글 , flag : true >> 좋아요 요청, false >> 좋아요 취소 요청")
+	@ApiOperation("좋아요 / 좋아요 취소 요청 메소드")
 	@GetMapping("/{memPk}/{objectType}/{objectPk}/{flag}") // 임시 URL
-	ResponseEntity<Map<String, Object>> doLike(@PathVariable int memPk, @PathVariable int objectPk,@PathVariable int objectType, @PathVariable boolean flag ){
+	ResponseEntity<Map<String, Object>> doLike(
+			@PathVariable int memPk, 
+			@ApiParam("좋아요 하는 대상의 PK") @PathVariable int objectPk,
+			@ApiParam("좋아요 하느 대상의 테이블 | 2 : 소설, 3 : 에피소드, 6 : 댓글 ")@PathVariable int objectType, 
+			@ApiParam("좋아요 / 좋아요 취소 여부 | true : 좋아요, false : 좋아요 취소") @PathVariable boolean flag ){
 		mService.doLike(memPk, objectPk, objectType, flag);			
 		if(flag)
 			return handleSuccess("좋아요 완료");

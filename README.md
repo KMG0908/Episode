@@ -3,7 +3,7 @@
 
 <p align="center"><img src="https://i.imgur.com/CmGVVR8.png"> </p>
 
-<a href="http:k02a2061.p.ssafy.io" target="_blank"> Demo link </a>
+<a href="https://youtu.be/zH8WoSzCm5w" target="_blank"> Demo  </a>
 
 ## Project Info
 ### R&R

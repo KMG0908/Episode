@@ -3,7 +3,7 @@
 
 <p align="center"><img src="https://i.imgur.com/CmGVVR8.png"> </p>
 
-<a href="https://youtu.be/zH8WoSzCm5w" target="_blank"> Demo  </a>
+<a href="https://youtu.be/zH8WoSzCm5w" target="_blank"> Demo Video </a>
 
 ## Project Info
 ### R&R
